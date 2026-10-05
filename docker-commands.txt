@@ -1,0 +1,196 @@
+REM ============================================================
+REM PHP + MySQL + phpMyAdmin Docker Project
+REM ============================================================
+
+REM Go to your project folder
+cd C:\xampp8.3\htdocs\ajax-php-crud
+
+
+REM ============================================================
+REM 1. BUILD
+REM ============================================================
+
+REM Build the Docker image from Dockerfile
+REM Use this the first time or after changing Dockerfile
+docker compose build
+
+
+REM ============================================================
+REM 2. START PROJECT
+REM ============================================================
+
+REM Start all containers in background
+REM Starts PHP + Apache, MySQL and phpMyAdmin
+docker compose up -d
+
+
+REM Build and start together
+REM Use this when Dockerfile has been changed
+docker compose up -d --build
+
+
+REM ============================================================
+REM 3. CHECK CONTAINERS
+REM ============================================================
+
+REM Show container status
+docker compose ps
+
+
+REM Show all Docker containers
+docker ps -a
+
+
+REM Show only currently running containers
+docker ps
+
+
+REM ============================================================
+REM 4. OPEN APPLICATION
+REM ============================================================
+
+REM PHP application
+REM http://localhost:8000
+
+REM phpMyAdmin
+REM http://localhost:8080
+
+
+REM ============================================================
+REM 5. VIEW LOGS
+REM ============================================================
+
+REM View logs of all containers
+docker compose logs
+
+
+REM View PHP/Apache container logs
+docker compose logs web
+
+
+REM View MySQL container logs
+docker compose logs db2
+
+
+REM View phpMyAdmin logs
+docker compose logs phpmyadmin
+
+
+REM Follow logs continuously
+REM Press CTRL + C to stop viewing logs
+docker compose logs -f
+
+
+REM ============================================================
+REM 6. STOP PROJECT
+REM ============================================================
+
+REM Stop all containers
+REM Containers and database data are kept
+docker compose stop
+
+
+REM ============================================================
+REM 7. START AGAIN
+REM ============================================================
+
+REM Start previously stopped containers
+docker compose start
+
+
+REM ============================================================
+REM 8. STOP + REMOVE CONTAINERS
+REM ============================================================
+
+REM Stop and remove containers
+REM Docker images and database volume are NOT removed
+docker compose down
+
+
+REM ============================================================
+REM 9. REBUILD EVERYTHING
+REM ============================================================
+
+REM Rebuild image and start containers
+docker compose up -d --build
+
+
+REM ============================================================
+REM 10. ENTER PHP CONTAINER
+REM ============================================================
+
+REM Open terminal inside PHP container
+docker exec -it ajax-php-app-new bash
+
+
+REM Exit from container
+exit
+
+
+REM ============================================================
+REM 11. ENTER MYSQL CONTAINER
+REM ============================================================
+
+REM Open MySQL terminal
+docker exec -it ajax-mysql-db-new mysql -u chanchal -p
+
+
+REM Password:
+REM 1234
+
+
+REM ============================================================
+REM 12. IMPORTANT - DATABASE RESET
+REM ============================================================
+
+REM WARNING:
+REM This removes containers AND Docker volumes.
+REM Your MySQL database data stored in mysql_data will be deleted.
+
+docker compose down -v
+
+
+REM After deleting the volume, create everything again
+docker compose up -d
+
+
+REM ============================================================
+REM 13. CHECK DOCKER IMAGES
+REM ============================================================
+
+REM Show Docker images
+docker images
+
+
+REM ============================================================
+REM 14. CHECK DOCKER VOLUMES
+REM ============================================================
+
+REM Show Docker volumes
+docker volume ls
+
+
+REM ============================================================
+REM 15. COMPLETE DAILY WORKFLOW
+REM ============================================================
+
+REM Start Docker Desktop first.
+
+REM Go to project
+cd C:\xampp8.3\htdocs\ajax-php-crud
+
+REM Start project
+docker compose up -d
+
+REM Check status
+docker compose ps
+
+REM Work on PHP project
+REM Open:
+REM http://localhost:8000
+
+REM When finished, stop containers
+docker compose stop
+
+REM Next day, start them again
+docker compose start

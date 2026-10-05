@@ -1,7 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "ajaxcrud");
-
-
+//$conn = new mysqli("localhost", "root", "", "ajaxcrud");
+include "db.php";
 
 // Collect text inputs
 $name = $_POST['name'];

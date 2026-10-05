@@ -107,7 +107,7 @@
         <div class="form-row">
             <label>Subjects</label>
             <div class="subject-group">
-                <label><input type="checkbox" name="sub[]" value="C" required>C</label>
+                <label><input type="checkbox" name="sub[]" value="C">C</label>
                 <label><input type="checkbox" name="sub[]" value="C++">C++</label>
                 <label><input type="checkbox" name="sub[]" value="Java">Java</label>
                 <label><input type="checkbox" name="sub[]" value="Python">Python</label>
@@ -240,7 +240,7 @@
                 $.ajax({
                     url: "load-update-form.php",
                     type: "POST",
-                    data: {
+                    data: { 
                         id: studentId
                     },
                     success: function(data) {

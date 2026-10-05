@@ -1,6 +1,6 @@
 <?php
 $student_id = $_POST["id"];
-$conn = mysqli_connect("localhost", "root", "", "ajaxcrud") or die("Connection Failed");
+include "db.php";
 
 $sql = "SELECT * FROM students WHERE id = {$student_id}";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed");
@@ -13,7 +13,7 @@ if (mysqli_num_rows($result) > 0) {
     $subjects = explode(",", $row['subject']);
 
     $output .= "
-    <form id='updateForm' method='post' enctype='multipart/form-data'>
+    <form id='updateForm'  enctype='multipart/form-data'>
         <input type='hidden' name='id' value='{$row["id"]}'>
 
         <p>Name</p>

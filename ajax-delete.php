@@ -1,6 +1,7 @@
 <?php 
 $student_id = $_POST["id"];
-$conn = mysqli_connect("localhost", "root", "", "ajaxcrud") or die("Connection Failed");
+//$conn = mysqli_connect("localhost", "root", "", "ajaxcrud") or die("Connection Failed");
+include "db.php";
 
 // Step 1: Get image filename
 $sql1 = "SELECT * FROM students WHERE id = {$student_id}";

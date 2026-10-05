@@ -1,10 +1,8 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "ajaxcrud");
+//$conn = new mysqli("localhost", "root", "", "ajaxcrud");
+include "db.php";
 
-if (!$conn) {
-    echo "DB Connection Failed";
-    exit;
-}
+
 
 $id = $_POST['id'];
 $name = $_POST['name'];

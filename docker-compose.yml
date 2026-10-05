@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build: .
-    container_name: ajax-php-app
+    container_name: ajax-php-app-new
     ports:
       - "8000:80"
     volumes:
@@ -13,11 +13,11 @@ services:
 
   db2:
     image: mysql:8.0
-    container_name: ajax-mysql-db
+    container_name: ajax-mysql-db-new
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ajax
+      MYSQL_DATABASE: ajaxcrud
       MYSQL_USER: chanchal
       MYSQL_PASSWORD: 1234
     ports:
@@ -27,7 +27,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: ajax-phpmyadmin-ui
+    container_name: ajax-phpmyadmin-ui-new
     restart: always
     ports:
       - "8080:80"

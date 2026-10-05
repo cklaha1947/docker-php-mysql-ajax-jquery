@@ -1,5 +1,6 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "ajaxcrud") or die("Connection Failed");
+//$conn = mysqli_connect("localhost", "root", "", "ajaxcrud") or die("Connection Failed");
+include "db.php";
 
 $sql = "SELECT * FROM students";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed");
